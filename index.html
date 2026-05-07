@@ -59,9 +59,9 @@ nav a:hover{opacity:1;}
 .card{background:var(--white);display:flex;flex-direction:column;padding:32px 28px 28px;transition:background .22s ease;border:1px solid var(--bdr);animation:fu .55s cubic-bezier(.22,1,.36,1) both;}
 .card:hover{background:var(--cream2);}
 @keyframes fu{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.ctag{font-size:9px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gray);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.ctag{display:none;font-size:9px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gray);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
 .ctag::after{content:"";flex:1;height:1px;background:var(--bdr);}
-.cnum{font-size:4rem;font-weight:900;color:rgba(242,143,123,.35);line-height:1;letter-spacing:-.04em;margin-bottom:14px;user-select:none;}
+.cnum{font-size:1.6rem;font-weight:800;color:rgba(242,143,123,.4);line-height:1;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;user-select:none;}
 .cname{font-size:clamp(1rem,1.3vw,1.15rem);font-weight:700;letter-spacing:-.01em;color:var(--navy);text-transform:uppercase;line-height:1.15;margin-bottom:5px;}
 .cloc{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);margin-bottom:24px;}
 .cspecs{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);margin-bottom:18px;}
@@ -97,9 +97,7 @@ footer{background:#ECECEC;border-top:1px solid var(--bdr);padding:44px 6% 32px;d
 <header>
   <div class="logo"><img src="data:image/png;base64,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" alt="More International Realty"/></div>
   <nav><ul>
-    <li><a href="#miami">Miami-Dade</a></li>
-    <li><a href="#broward">Broward</a></li>
-    <li><a href="#palm">Palm Beach</a></li>
+    <li><a href="#developments">Developments</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul></nav>
 </header>
@@ -112,342 +110,64 @@ footer{background:#ECECEC;border-top:1px solid var(--bdr);padding:44px 6% 32px;d
 </section>
 
 <div class="stats">
-  <div class="stat"><span class="stat-n">27</span><span class="stat-l">Developments</span></div>
+  <div class="stat"><span class="stat-n">25</span><span class="stat-l">Developments</span></div>
   <div class="stat"><span class="stat-n">3</span><span class="stat-l">Regions</span></div>
   <div class="stat"><span class="stat-n">15+</span><span class="stat-l">Years in Market</span></div>
 </div>
-<section class="region" id="miami" style="background:#F4EFE9;">
+<section class="region" id="developments" style="background:#F4EFE9;">
   <div class="rhead">
-    <div><div class="rlabel">Region 01</div><h2 class="rtitle">Miami-Dade</h2></div>
-    <div class="rcount">21 Developments</div>
+    <div><div class="rlabel">South Florida</div><h2 class="rtitle">New Constructions</h2></div>
+    <div class="rcount">25 Developments</div>
   </div>
   <div class="grid">
     <article class="card">
-      <div class="ctag">North Miami</div>
-      <div class="cnum">01</div>
-      <h3 class="cname">One Park Tower</h3>
-      <div class="cloc">By Turnberry</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">967 – 2,134 sqft</span></div>
-      </div>
-      <div class="cprice">$600,000 – $1,904,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/scl/fo/k1pum1m0pilm3uybkewhg/h?dl=0&rlkey=pwavdam879v4571ntokx18nuk" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20One+Park+Tower" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Brickell</div>
-      <div class="cnum">02</div>
-      <h3 class="cname">St. Regis Residences</h3>
-      <div class="cloc">Miami · Brickell</div>
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Colette Residences</h3>
+      <div class="cloc">By Meta Development · OSPA</div>
       <div class="cspecs">
         <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">2,375 – 3,408 sqft</span></div>
+        <div><span class="slabel">Area</span><span class="sval">2,144 – 6,128 sqft</span></div>
       </div>
-      <div class="cprice">$2,950,000 – $8,100,000</div>
+      <div class="cprice">From $3,300,000</div>
       <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/0kir7tqzqmrd43p/AAAtlNr-o4VodkxIKYOXhOnSa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20St.+Regis+Brickell" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a class="btn bd" href="https://www.dropbox.com/scl/fo/hmj3cftta3l4ddbnl9t8a/AOt6v-OpQ-wy8NpnjeS3K1Q?rlkey=5mql7aunuc3lhqxca3a6pb5dh&st=fksfg4nz&dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Colette+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
       </div>
     </article>
     <article class="card">
-      <div class="ctag">Sunny Isles</div>
-      <div class="cnum">03</div>
-      <h3 class="cname">St. Regis Residences</h3>
-      <div class="cloc">Sunny Isles Beach</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">1,994 – 4,670 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/njyt31ckd98ihid/AAClmIZecpCl1KqFn3HEJM0Wa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20St.+Regis+Sunny+Isles" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Brickell</div>
-      <div class="cnum">04</div>
-      <h3 class="cname">Cipriani Residences</h3>
-      <div class="cloc">Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">1,213 – 1,318 sqft</span></div>
-      </div>
-      <div class="cprice">$1,100,000 – $4,400,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/86aeg0xyn5slesb/AAAOc4mbN-WKsflZCyNbHkbXa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Cipriani+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Downtown</div>
-      <div class="cnum">05</div>
-      <h3 class="cname">Waldorf Astoria Residences</h3>
-      <div class="cloc">Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">516 – 3,828 sqft</span></div>
-      </div>
-      <div class="cprice">From $782,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/kiewxtpdc0pbb2n/AAAWS72panrSvFme0ezZvagUa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Waldorf+Astoria" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Sunny Isles</div>
-      <div class="cnum">06</div>
-      <h3 class="cname">Bentley Residences</h3>
-      <div class="cloc">Sunny Isles Beach</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">2,839 – 3,014 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/cd8lwd5kzg0tw2k/AABpdbg95a-a4hoqQrEbrD98a?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Bentley+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">North Miami Beach</div>
-      <div class="cnum">07</div>
-      <h3 class="cname">Nexo Residences</h3>
-      <div class="cloc">North Miami Beach</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">632 – 1,559 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/z4kdxuijjhzolwk/AAAioxA_6jH-wEjx6JS-8qDia?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Nexo+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Downtown</div>
-      <div class="cnum">08</div>
-      <h3 class="cname">Okan Tower</h3>
-      <div class="cloc">Miami Residences</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">445 – 2,040 sqft</span></div>
-      </div>
-      <div class="cprice">From $900,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/q9vkpqe0hepuzd4/AADtbG4BxyhvaB5v90PcYIwOa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Okan+Tower" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Miami Beach</div>
-      <div class="cnum">09</div>
-      <h3 class="cname">Five Park</h3>
-      <div class="cloc">Miami Beach</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">1,778 – 4,269 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/u7jf29j9c9ad6ki/AABUQYFb6gL7XNHHc2xKaIMSa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Five+Park" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Coral Gables</div>
-      <div class="cnum">10</div>
-      <h3 class="cname">Gables Village</h3>
-      <div class="cloc">Coral Gables</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">2,021 – 4,803 sqft</span></div>
-      </div>
-      <div class="cprice">From $2,075,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/v2wmkb132hdbrkf/AABbXzM5LIQEpzGqePmH-kfza?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Gables+Village" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Biscayne</div>
-      <div class="cnum">11</div>
-      <h3 class="cname">Casa Bella Residences</h3>
-      <div class="cloc">By B&amp;B Italia · Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">711 – 5,890 sqft</span></div>
-      </div>
-      <div class="cprice">From $546,900</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/jr7sfefuu0s1upa/AAC1gQOgebsZ-JPQHNT6qfgVa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Casa+Bella" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Wynwood</div>
-      <div class="cnum">12</div>
-      <h3 class="cname">Diesel Wynwood</h3>
-      <div class="cloc">Miami · Wynwood</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 2 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">487 – 2,112 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/uosx40aiigylwki/AADVNimgdJj9e_zEESK3cr9da?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Diesel+Wynwood" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Brickell</div>
-      <div class="cnum">13</div>
-      <h3 class="cname">Baccarat Residences</h3>
-      <div class="cloc">Brickell · Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">1,566 – 11,861 sqft</span></div>
-      </div>
-      <div class="cprice">From $1,611,900</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/2v5he4ul16wwdy2/AADx2rPpaXmlZbe15Nn8seUra?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Baccarat+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Brickell</div>
-      <div class="cnum">14</div>
-      <h3 class="cname">Lofty Brickell</h3>
-      <div class="cloc">Miami · Riverwalk</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">535 – 2,272 sqft</span></div>
-      </div>
-      <div class="cprice">From $550,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/dtlii5qsv6fq2j5/AACCWk4rDdibOs8tBLGk3SUIa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Lofty+Brickell" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Downtown</div>
-      <div class="cnum">15</div>
-      <h3 class="cname">The Elser Hotel &amp; Residences</h3>
-      <div class="cloc">Downtown Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">455 – 1,533 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/unc6iou9butogto/AADTfXMljp113-YyHRFt3mPAa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20The+Elser" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Wynwood</div>
-      <div class="cnum">16</div>
-      <h3 class="cname">Nomad Residences</h3>
-      <div class="cloc">Wynwood · Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 2 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">464 – 804 sqft</span></div>
-      </div>
-      <div class="cprice">From $500,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/nk1s7fipwxjyh2v/AABu5MFMZqH47wrny-MXY3Iba?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Nomad+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Midtown</div>
-      <div class="cnum">17</div>
-      <h3 class="cname">The Standard Residences</h3>
-      <div class="cloc">Midtown Miami</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 2 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">432 – 965 sqft</span></div>
-      </div>
-      <div class="cprice">Upon Request</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/ivvqnasj56a1tm3/AACA-lzNcXIT7Gu-oWg38hYWa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20The+Standard+Midtown" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-  </div>
-    <article class="card">
-      <div class="ctag">North Miami Beach</div>
-      <div class="cnum">18</div>
-      <h3 class="cname">The William · EB5</h3>
-      <div class="cloc">By Blue Road &amp; Ilia Development Group</div>
+      <div class="ctag">BROWARD</div>
+      <div class="cnum">BROWARD</div>
+      <h3 class="cname">One Hollywood Residences</h3>
+      <div class="cloc">By Star Developers Group</div>
       <div class="cspecs">
         <div><span class="slabel">Bedrooms</span><span class="sval">Studio – 3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">552 – 1,412 sqft</span></div>
+        <div><span class="slabel">Area</span><span class="sval">517 – 1,425 sqft</span></div>
       </div>
-      <div class="cprice">From $380,900</div>
+      <div class="cprice">From $410,000</div>
       <div class="cactions">
-        <a class="btn bd" href="https://fortuneinternational.app.box.com/s/9qpea0z2dtfme2n7g5j8x4xb8c7isdvo" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20The%20William%20EB5" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a class="btn bd" href="https://fortuneinternational.app.box.com/s/7fz7cw0cdm7fim9hwuq0wyl56pvfs2ms" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20One+Hollywood+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
       </div>
     </article>
     <article class="card">
-      <div class="ctag">Midtown Miami</div>
-      <div class="cnum">19</div>
-      <h3 class="cname">Midtown Park Tower</h3>
-      <div class="cloc">By Rosso &amp; Midtown Development · Proper</div>
+      <div class="ctag">BROWARD</div>
+      <div class="cnum">BROWARD</div>
+      <h3 class="cname">The Ritz-Carlton Residences</h3>
+      <div class="cloc">Pompano Beach</div>
       <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">Studio – 5 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">588 – 5,000 sqft</span></div>
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 5 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">906 – 2,051 sqft</span></div>
       </div>
-      <div class="cprice">From $720,000</div>
+      <div class="cprice">From $883,000</div>
       <div class="cactions">
-        <a class="btn bd" href="https://fortuneinternational.app.box.com/s/ct5bd3f4tukvd96jtpef1f2d2nwczvxg" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Midtown%20Park%20Tower" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a class="btn bd" href="https://www.dropbox.com/sh/czzymqcrhbqw1q4/AABQ4mYvIchNwc27Nnzew0mIa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Ritz-Carlton+Pompano" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
       </div>
     </article>
     <article class="card">
-      <div class="ctag">North Bay Village</div>
-      <div class="cnum">20</div>
-      <h3 class="cname">Pagani Residences</h3>
-      <div class="cloc">By Riviera Horizons · Pagani Arte</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">2,000 – 3,300 sqft</span></div>
-      </div>
-      <div class="cprice">From $2,400,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/scl/fo/sfoyyqaaqwvzi21t1e6j7/h?rlkey=3kk6sizwkuneuc3jat3t9zwhu&st=k5nv94j6&dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Pagani%20Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-</section>
-<section class="region" id="broward" style="background:#ECECEC;">
-  <div class="rhead">
-    <div><div class="rlabel">Region 02</div><h2 class="rtitle">Broward</h2></div>
-    <div class="rcount">4 Developments</div>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <div class="ctag">Hollywood Beach</div>
-      <div class="cnum">21</div>
-      <h3 class="cname">Icon Beach Residences</h3>
-      <div class="cloc">By Related Group &amp; BH Group</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">950 – 2,500 sqft</span></div>
-      </div>
-      <div class="cprice">From $825,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/scl/fo/7apnei3u3zin0xhr5x97c/ANh9sFALhPoseyvFeKz67JA?rlkey=rb1dsyjz8i8e4c6jrr91thj5y&st=w7u48adb&dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Icon%20Beach%20Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-    <article class="card">
-      <div class="ctag">Hallandale Beach</div>
-      <div class="cnum">22</div>
+      <div class="ctag">BROWARD</div>
+      <div class="cnum">BROWARD</div>
       <h3 class="cname">Oasis Hallandale</h3>
       <div class="cloc">Hallandale Beach</div>
       <div class="cspecs">
@@ -461,76 +181,322 @@ footer{background:#ECECEC;border-top:1px solid var(--bdr);padding:44px 6% 32px;d
       </div>
     </article>
     <article class="card">
-      <div class="ctag">Pompano Beach</div>
-      <div class="cnum">23</div>
-      <h3 class="cname">The Ritz-Carlton Residences</h3>
-      <div class="cloc">Pompano Beach</div>
+      <div class="ctag">BROWARD</div>
+      <div class="cnum">BROWARD</div>
+      <h3 class="cname">Icon Beach Residences</h3>
+      <div class="cloc">By Related Group · Hollywood Beach</div>
       <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 5 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">906 – 2,051 sqft</span></div>
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 3 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">950 – 2,500 sqft</span></div>
       </div>
-      <div class="cprice">From $883,000</div>
+      <div class="cprice">From $825,000</div>
       <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/czzymqcrhbqw1q4/AABQ4mYvIchNwc27Nnzew0mIa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Ritz-Carlton+Pompano" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a class="btn bd" href="https://www.dropbox.com/scl/fo/7apnei3u3zin0xhr5x97c/ANh9sFALhPoseyvFeKz67JA?rlkey=rb1dsyjz8i8e4c6jrr91thj5y&st=w7u48adb&dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Icon+Beach+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
       </div>
     </article>
-  
     <article class="card">
-      <div class="ctag">Downtown Hollywood</div>
-      <div class="cnum">24</div>
-      <h3 class="cname">One Hollywood Residences</h3>
-      <div class="cloc">By Star Developers Group</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">Studio – 3 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">517 – 1,425 sqft</span></div>
-      </div>
-      <div class="cprice">From $410,000</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://fortuneinternational.app.box.com/s/7fz7cw0cdm7fim9hwuq0wyl56pvfs2ms" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20One%20Hollywood%20Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-  </div>
-</section>
-<section class="region" id="palm" style="background:#F4EFE9;">
-  <div class="rhead">
-    <div><div class="rlabel">Region 03</div><h2 class="rtitle">Palm Beach</h2></div>
-    <div class="rcount">1 Development</div>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <div class="ctag">Boca Raton · GL Homes</div>
-      <div class="cnum">25</div>
-      <h3 class="cname">Lotus Palm</h3>
-      <div class="cloc">Boca Raton</div>
-      <div class="cspecs">
-        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 5 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">2,717 – 6,886 sqft</span></div>
-      </div>
-      <div class="cprice">From $1,149,900</div>
-      <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/sh/os80b2y9fmnjgam/AACktepA5eFd1Cb82wzXZ-b2a?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Lotus+Palm+Boca+Raton" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
-      </div>
-    </article>
-  </div>
-</section>
-    <article class="card">
-      <div class="ctag">South Brickell</div>
-      <div class="cnum">26</div>
-      <h3 class="cname">Colette Residences</h3>
-      <div class="cloc">By Meta Development · OSPA</div>
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Pagani Residences</h3>
+      <div class="cloc">North Bay Village · By Riviera Horizons</div>
       <div class="cspecs">
         <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
-        <div><span class="slabel">Area</span><span class="sval">2,144 – 6,128 sqft</span></div>
+        <div><span class="slabel">Area</span><span class="sval">2,000 – 3,300 sqft</span></div>
       </div>
-      <div class="cprice">From $3,300,000</div>
+      <div class="cprice">From $2,400,000</div>
       <div class="cactions">
-        <a class="btn bd" href="https://www.dropbox.com/scl/fo/hmj3cftta3l4ddbnl9t8a/AOt6v-OpQ-wy8NpnjeS3K1Q?rlkey=5mql7aunuc3lhqxca3a6pb5dh&st=fksfg4nz&dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
-        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Colette%20Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a class="btn bd" href="https://www.dropbox.com/scl/fo/sfoyyqaaqwvzi21t1e6j7/h?rlkey=3kk6sizwkuneuc3jat3t9zwhu&st=k5nv94j6&dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Pagani+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
       </div>
     </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Midtown Park Tower</h3>
+      <div class="cloc">Midtown Miami · Fortune International</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">Studio – 5 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">588 – 5,000 sqft</span></div>
+      </div>
+      <div class="cprice">From $720,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://fortuneinternational.app.box.com/s/ct5bd3f4tukvd96jtpef1f2d2nwczvxg" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Midtown+Park+Tower" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">The William · EB5</h3>
+      <div class="cloc">North Miami Beach</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">Studio – 3 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">552 – 1,412 sqft</span></div>
+      </div>
+      <div class="cprice">From $380,900</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://fortuneinternational.app.box.com/s/9qpea0z2dtfme2n7g5j8x4xb8c7isdvo" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20The+William+EB5" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">The Standard Residences</h3>
+      <div class="cloc">Midtown Miami</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 2 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">432 – 965 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/ivvqnasj56a1tm3/AACA-lzNcXIT7Gu-oWg38hYWa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20The+Standard+Midtown" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Nomad Residences</h3>
+      <div class="cloc">Wynwood</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 2 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">464 – 804 sqft</span></div>
+      </div>
+      <div class="cprice">From $500,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/nk1s7fipwxjyh2v/AABu5MFMZqH47wrny-MXY3Iba?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Nomad+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">The Elser Hotel & Residences</h3>
+      <div class="cloc">Downtown Miami</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 3 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">455 – 1,533 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/unc6iou9butogto/AADTfXMljp113-YyHRFt3mPAa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20The+Elser" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Lofty Brickell</h3>
+      <div class="cloc">Miami · Riverwalk</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 3 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">535 – 2,272 sqft</span></div>
+      </div>
+      <div class="cprice">From $550,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/dtlii5qsv6fq2j5/AACCWk4rDdibOs8tBLGk3SUIa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Lofty+Brickell" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Baccarat Residences</h3>
+      <div class="cloc">Brickell</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">1,566 – 11,861 sqft</span></div>
+      </div>
+      <div class="cprice">From $1,611,900</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/2v5he4ul16wwdy2/AADx2rPpaXmlZbe15Nn8seUra?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Baccarat+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Diesel Wynwood</h3>
+      <div class="cloc">Wynwood</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 2 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">487 – 2,112 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/uosx40aiigylwki/AADVNimgdJj9e_zEESK3cr9da?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Diesel+Wynwood" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Casa Bella Residences</h3>
+      <div class="cloc">Biscayne · By B&amp;B Italia</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">711 – 5,890 sqft</span></div>
+      </div>
+      <div class="cprice">From $546,900</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/jr7sfefuu0s1upa/AAC1gQOgebsZ-JPQHNT6qfgVa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Casa+Bella" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Gables Village</h3>
+      <div class="cloc">Coral Gables</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">2,021 – 4,803 sqft</span></div>
+      </div>
+      <div class="cprice">From $2,075,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/v2wmkb132hdbrkf/AABbXzM5LIQEpzGqePmH-kfza?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Gables+Village" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Five Park</h3>
+      <div class="cloc">Miami Beach</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">1,778 – 4,269 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/u7jf29j9c9ad6ki/AABUQYFb6gL7XNHHc2xKaIMSa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Five+Park" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Okan Tower</h3>
+      <div class="cloc">Downtown Miami</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">445 – 2,040 sqft</span></div>
+      </div>
+      <div class="cprice">From $900,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/q9vkpqe0hepuzd4/AADtbG4BxyhvaB5v90PcYIwOa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Okan+Tower" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Nexo Residences</h3>
+      <div class="cloc">North Miami Beach</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">0 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">632 – 1,559 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/z4kdxuijjhzolwk/AAAioxA_6jH-wEjx6JS-8qDia?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Nexo+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Bentley Residences</h3>
+      <div class="cloc">Sunny Isles Beach</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">3 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">2,839 – 3,014 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/cd8lwd5kzg0tw2k/AABpdbg95a-a4hoqQrEbrD98a?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Bentley+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Waldorf Astoria Residences</h3>
+      <div class="cloc">Downtown Miami</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">516 – 3,828 sqft</span></div>
+      </div>
+      <div class="cprice">From $782,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/kiewxtpdc0pbb2n/AAAWS72panrSvFme0ezZvagUa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Waldorf+Astoria" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">MIAMI-DADE</div>
+      <div class="cnum">MIAMI-DADE</div>
+      <h3 class="cname">Cipriani Residences</h3>
+      <div class="cloc">Brickell</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">1,213 – 1,318 sqft</span></div>
+      </div>
+      <div class="cprice">$1,100,000 – $4,400,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/86aeg0xyn5slesb/AAAOc4mbN-WKsflZCyNbHkbXa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20Cipriani+Residences" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">SUNNY ISLES</div>
+      <div class="cnum">SUNNY ISLES</div>
+      <h3 class="cname">St. Regis Residences</h3>
+      <div class="cloc">Sunny Isles Beach</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">1,994 – 4,670 sqft</span></div>
+      </div>
+      <div class="cprice">Upon Request</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/njyt31ckd98ihid/AAClmIZecpCl1KqFn3HEJM0Wa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20St.+Regis+Sunny+Isles" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">BRICKELL</div>
+      <div class="cnum">BRICKELL</div>
+      <h3 class="cname">St. Regis Residences</h3>
+      <div class="cloc">Brickell · Miami</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">2 – 4 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">2,375 – 3,408 sqft</span></div>
+      </div>
+      <div class="cprice">$2,950,000 – $8,100,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/sh/0kir7tqzqmrd43p/AAAtlNr-o4VodkxIKYOXhOnSa?dl=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20St.+Regis+Brickell" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="ctag">NORTH MIAMI</div>
+      <div class="cnum">NORTH MIAMI</div>
+      <h3 class="cname">One Park Tower</h3>
+      <div class="cloc">By Turnberry</div>
+      <div class="cspecs">
+        <div><span class="slabel">Bedrooms</span><span class="sval">1 – 3 BED</span></div>
+        <div><span class="slabel">Area</span><span class="sval">967 – 2,134 sqft</span></div>
+      </div>
+      <div class="cprice">$600,000 – $1,904,000</div>
+      <div class="cactions">
+        <a class="btn bd" href="https://www.dropbox.com/scl/fo/k1pum1m0pilm3uybkewhg/h?dl=0&rlkey=pwavdam879v4571ntokx18nuk" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg> Portfolio</a>
+        <a class="btn bo" href="https://wa.me/13053974726?text=Hi!%20I%27m%20interested%20in%20One+Park+Tower" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+      </div>
+    </article>
+  </div>
+</section>
 
 <div class="cta" id="contact">
   <div class="cta-ey">English · Português · Español</div>
